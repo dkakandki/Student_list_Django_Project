@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <style>
+    table, th, td {
+        border:1px solid black;
+        border-radius: 10px
+        }
+  </style>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Home Page</title>
+  </head>
+  <body>
+    <h3>Student list<h3>
+      <table>
+          <tr>
+            <th>Id</th>
+            <th>Student</th>
+            <th>Roll number</th>
+            <th>City</th>
+            <th>Marks</th>
+            <th>Pass date</th>
+          </tr>
+          {% for student in student_list %}
+          <tr>
+              <td>{{ student.id }}</td>
+              <td>{{ student.name }}</td>
+              <td>{{ student.roll_num }}</td>
+              <td>{{ student.city }}</td>
+              <td>{{ student.marks }}</td>
+              <td>{{ student.pass_date }}</td>
+              <td><a href="{% url 'update' student.id %}" class="btn btn-primary">Update</a></td>
+              <td><a href="{% url 'delete' student.id %}" class="btn btn-primary">Delete</a></td>
+          </tr>
+          {% endfor %}
+      </table>
+      <a href="{% url 'List' %}" class="btn btn-primary">Add Student</a>
+      <a href="{% url 'Logout' %}" class="btn btn-primary">Logout</a>    
+  </body>
+</html>
