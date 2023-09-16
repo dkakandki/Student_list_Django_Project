@@ -41,7 +41,7 @@ def loginpage(request):
             return HttpResponse('Username or Password is incorrect!')
     return render(request, 'registration/login.html')
 
-def student_list(request):
+def add_student(request):
     form = Studentform(request.POST or None)
     if form.is_valid():
         form.save()
@@ -56,7 +56,7 @@ def student_list(request):
     #     # new_student = Student.objects.create(name,rollnum,city,marks,pass_date)
     #     new_student.save()
     #     # Student_data = Student.object.all()
-    return render(request, 'registration/Student_list.html', {'form':form})
+    return render(request, 'registration/add_student.html', {'form':form})
 
 def update_student_info(request, student_id):
     student_data = Student.objects.get(pk = student_id)
