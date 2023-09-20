@@ -25,7 +25,6 @@
             <th>Roll number</th>
             <th>City</th>
             <th>Marks</th>
-            <th>Pass date</th>
           </tr>
           {% for student in student_list %}
           <tr>
@@ -34,7 +33,6 @@
               <td>{{ student.roll_num }}</td>
               <td>{{ student.city }}</td>
               <td>{{ student.marks }}</td>
-              <td>{{ student.pass_date }}</td>
               <td><a href="{% url 'update' student.id %}" class="btn btn-primary">Update</a></td>
               <td><a href="{% url 'delete' student.id %}" class="btn btn-primary">Delete</a></td>
           </tr>

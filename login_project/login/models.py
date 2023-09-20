@@ -6,7 +6,7 @@ class Student(models.Model):
     roll_num = models.IntegerField(unique=True)
     city = models.CharField(max_length=100)
     marks = models.IntegerField()
-    pass_date = models.DateField()
+
     
     def __str__(self):
         return self.name

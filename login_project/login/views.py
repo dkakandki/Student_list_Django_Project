@@ -45,17 +45,6 @@ def add_student(request):
     form = Studentform(request.POST or None)
     if form.is_valid():
         form.save()
-    # if request.method == 'POST':
-    #     name = request.POST.get('name')
-    #     roll_num = request.POST.get('roll_num')
-    #     city = request.POST.get('city')
-    #     marks = request.POST.get('marks')
-    #     pass_date = request.POST.get('pass_date')
-    #     print(name,roll_num,city,marks,pass_date)
-    #     new_student = Student.objects.create(name=name,roll_num=roll_num,city=city,marks=marks,pass_date=pass_date)
-    #     # new_student = Student.objects.create(name,rollnum,city,marks,pass_date)
-    #     new_student.save()
-    #     # Student_data = Student.object.all()
     return render(request, 'registration/add_student.html', {'form':form})
 
 def update_student_info(request, student_id):
@@ -75,5 +64,3 @@ def delete_student(request, student_id):
 def logout(request):
     logout(request)
     return redirect ('login')
-
-# new_student = Student.objects.create(name=name,roll_num=rollnum,city=city,marks=marks,pass_date=pass_date)

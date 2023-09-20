@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from login.views import  signuppage, loginpage, home_page, student_list, update_student_info, delete_student, logout
+from login.views import  signuppage, loginpage, home_page, add_student, update_student_info, delete_student, logout
 
 class TestUrls(SimpleTestCase):
     def test_Signup(self):
@@ -15,9 +15,9 @@ class TestUrls(SimpleTestCase):
         Url = reverse('home')
         self.assertEqual(resolve(Url).func, home_page)
         
-    def test_Student_list(self):
-        Url = reverse('List')
-        self.assertEqual(resolve(Url).func, student_list)        
+    def test_add_student(self):
+        Url = reverse('Add')
+        self.assertEqual(resolve(Url).func, add_student)        
 
     def test_update_student(self):
         Url = reverse('update', args=['some-student_id'])
