@@ -62,5 +62,4 @@ def delete_student(request, student_id):
     
     
 def logout(request):
-    logout(request)
     return redirect ('login')

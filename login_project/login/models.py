@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Student(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=20)
     roll_num = models.IntegerField(unique=True)
-    city = models.CharField(max_length=100)
+    city = models.CharField(max_length=20)
     marks = models.IntegerField()
 
     
@@ -19,11 +19,11 @@ class Student(models.Model):
     
     
     
-class Parent(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    mother_name =  models.CharField(max_length=100)
-    father_name =  models.CharField(max_length=100)
-    phone_num =  models.IntegerField(null=False)
+# class Parent(models.Model):
+#     student = models.ForeignKey(Student, on_delete=models.CASCADE)
+#     mother_name =  models.CharField(max_length=100)
+#     father_name =  models.CharField(max_length=100)
+#     phone_num =  models.IntegerField(null=False)
     
-    def __str__(self):
-        return self.mother_name
+#     def __str__(self):
+#         return self.mother_name
