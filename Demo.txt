@@ -1,0 +1,33 @@
+You can think of a test as being broken down into four steps:
+Arrange
+Act
+Assert
+Cleanup
+
+Fixtures:
+In testing, a fixture provides a defined, reliable and consistent context for the tests. This could include environment (for example a database configured with known parameters) or content (such as a dataset).
+pytest --fixtures
+
+check the code coverage: pytest --cov-report term --cov-report html:coverage.html --cov=login
+
+markers: 
+Here are some of the builtin markers:
+usefixtures - use fixtures on a test function or class
+filterwarnings - filter certain warnings of a test function
+skip - always skip a test function
+skipif - skip a test function if a certain condition is met
+xfail - produce an “expected failure” outcome if a certain condition is met
+parametrize - perform multiple calls to the same test function.(@pytest.mark.parametrize(argnames, argvalues))
+@pytest.mark.django_db: combination with the Pytest testing framework in the context of Django applications to mark specific test functions or methods as requiring access to a Django database.
+A test can have more than one marker, and a marker can be on multiple tests.
+
+
+commands:
+pytest -v -m sanity
+pytest -v -m "not sanity"
+pytest -v test_server.py::TestClass::test_student_deleted
+pytest -v test_server.py::TestClass
+
+Custom marker and command line option to control test runs:  https://docs.pytest.org/en/stable/example/markers.html#custom-marker-and-command-line-option-to-control-test-runs
+
+Automatically adding markers based on test names: 

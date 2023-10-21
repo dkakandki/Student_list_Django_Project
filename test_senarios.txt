@@ -1,0 +1,8 @@
+1. page should redirect to login page when clicked on "i already have an account".
+2. login only if the credentials are correct, otherwise state credentials are in correct. 
+3. once login student list should be visible.
+4. form should be opened when clicked on add button.
+5. should be able to add student.
+6. should be able to update student details and check if the details are edited.
+7. should be able to delete student and the student should not be available in the student list once deleted.
+8.logout should redirect to login page.
